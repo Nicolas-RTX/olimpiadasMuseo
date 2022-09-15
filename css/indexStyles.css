@@ -82,6 +82,9 @@
     z-index: 999;
     
 }
+main{
+    margin: 10vh 0;
+}
 .form__label{
     color:#222222;
 }
