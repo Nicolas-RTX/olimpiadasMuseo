@@ -1,3 +1,14 @@
+:root {
+    --navColor1: #0761d6;
+    --navColor2: #f5f5f5;
+
+    --entradasColor1: #0761d6;
+
+    --blanco: #f5f5f5;
+    --negro: #222222;
+
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,4 +16,9 @@
 }
 body {
     font-family: 'Bahnschrift', Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    min-height: 80vh;
+    display: flex;
 }

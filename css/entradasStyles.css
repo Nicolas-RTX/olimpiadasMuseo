@@ -1,0 +1,64 @@
+
+.entradasForm {
+    border-radius: 0px 0px 25px 25px;
+    background: var(--blanco);
+    padding: 2vh 0vw;
+    width: 90vw;
+}
+
+[oculto] {
+    display: none;
+}
+
+.entradasHeader {
+    border-radius: 25px 25px 0px 0px;
+    background: var(--blanco);
+    justify-content: center;
+    padding: 2vh 0vw;
+    display: flex;
+    width: 90vw;
+}
+
+.entradasHeader__icon {
+    border: 3px solid var(--entradasColor1);
+    transform: scale(1.05);
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+}
+.entradasHeader__svg {
+    fill: var(--entradasColor1);
+    padding: 12px;
+    width: 48px;
+}
+
+.progress {
+    border-bottom: 3px solid var(--entradasColor1);
+    border-top: 3px solid var(--entradasColor1);
+    border-radius: 0px;
+    position: relative;
+    width: 5vw;
+    top: 2.5vh;
+}
+.progress:nth-of-type(1) {
+    border-left: 3px solid var(--entradasColor1);
+    border-radius: 25px 0px 0px 25px;
+}
+.progress:nth-of-type(9) {
+    border-right: 3px solid var(--entradasColor1);
+    border-radius: 0px 25px 25px 0px;
+}
+
+.progress-bar {
+    transition: 400ms all;
+}
+
+[icon-full] {
+    background: var(--entradasColor1);
+}
+[svg-full] {
+    fill: var(--blanco);
+}
+[bar-full] {
+    width: 100%;
+}
