@@ -12,6 +12,7 @@
 </head>
 <body>
   <?php include('addons/background.php') ?>
+  
     <header>
         <nav class="nav__bar nav__bar--desktop">
             <img class="nav__logo" src="img/logoarte.png" alt="Museo de Arte">

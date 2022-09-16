@@ -10,6 +10,7 @@
     <title>Museo</title>
 </head>
 <body>
+  
   <?php include('addons/background.php') ?>
     <header>
         <nav class="nav__bar nav__bar--desktop">
