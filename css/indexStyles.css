@@ -28,9 +28,11 @@
     position: relative !important;
     z-index: 999 !important;
 }
+
 header{
     width: 100%;
 }
+
 .nav__bar {
     border-bottom: 3px solid var(--navColor1);
     border-top: 3px solid var(--navColor1);
@@ -93,6 +95,22 @@ header{
     display: flex;
     flex-direction: column;
     margin-top: 5vh;
+
+}
+.visita__tittle, .visita__subtittle, .visita__text, .visitaEsc__tittle, .visitaEsc__subtittle, .visitaEsc__text {
+    display: flex;
+    align-self: center;
+}
+.visita__list, .visitaEsc__list {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+.visita__item, .visitaEsc__item{
+    display: flex;
+    list-style: none;
+}
+
 }
 .visita__tittle, .visita__subtittle, .visita__text, .visitaEsc__tittle, .visitaEsc__subtittle, .visitaEsc__text {
     display: flex;
