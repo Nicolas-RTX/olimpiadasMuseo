@@ -1,0 +1,44 @@
+main{
+    width: 90%;
+    margin:5vh auto;
+}
+.container__floor{
+   display: none;
+}
+.notEvent{
+        pointer-events:none;
+        cursor: default; 
+}
+.areas{
+    display: none;
+}
+@media screen and (min-width:0px){
+    .floor{
+        display: flex;
+        flex-direction: column;
+        margin: 10vh auto;
+    }
+    .container__floor{
+        position: relative;
+    }
+    .floor__img{
+       width: 100%;
+    }
+    .card__row{
+        display: flex;
+        flex-direction: row;
+    }
+    .img__card{
+       width: 50vw;
+    }
+
+}
+@media screen and (min-width:767px){
+    .floor{
+        display: flex;
+        flex-direction: row;
+    }
+    .img__card{
+        width: 20vw;
+     }
+}
