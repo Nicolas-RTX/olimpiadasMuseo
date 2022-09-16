@@ -30,7 +30,7 @@
 }
 
 header{
-    display: none;
+    width: 100%;
 }
 
 .nav__bar {
@@ -40,6 +40,7 @@ header{
     background: var(--navColor2);
     position: relative;
     padding: 2vh 5vw;
+    width: 100%;
 }
 
 .nav__list {
@@ -94,6 +95,7 @@ header{
     display: flex;
     flex-direction: column;
     margin-top: 5vh;
+
 }
 .visita__tittle, .visita__subtittle, .visita__text, .visitaEsc__tittle, .visitaEsc__subtittle, .visitaEsc__text {
     display: flex;
@@ -108,9 +110,22 @@ header{
     display: flex;
     list-style: none;
 }
-=======
-    
+
 }
+.visita__tittle, .visita__subtittle, .visita__text, .visitaEsc__tittle, .visitaEsc__subtittle, .visitaEsc__text {
+    display: flex;
+    align-self: center;
+}
+.visita__list, .visitaEsc__list {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+.visita__item, .visitaEsc__item{
+    display: flex;
+    list-style: none;
+}
+
 main{
     margin: 10vh 0;
 }
