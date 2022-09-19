@@ -65,14 +65,43 @@
             <button class="btn btn-primary" type="button" onclick="mostrar(2)">Continuar</button>
         </section>
         <section class="entradas" id="parteDos" oculto>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                <label for="floatingInput">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Apellido">
+                <label for="floatingInput">Apellido</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Celular">
+                <label for="floatingInput">Celular</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Ciudad">
+                <label for="floatingInput">Ciudad</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+                <label for="floatingInput">Email confirmar</label>
+            </div>
+
             <button class="btn btn-outline-primary" type="button" onclick="mostrar(1)">Volver</button>
             <button class="btn btn-primary" type="button" onclick="mostrar(3)">Continuar</button>
         </section>
         <section class="entradas" id="parteTres" oculto>
+            <p>* Insertar API de Mercago Pago aquí :) *</p>
+
             <button class="btn btn-outline-primary" type="button" onclick="mostrar(2)">Volver</button>
             <button class="btn btn-primary" type="button" onclick="mostrar(4)">Continuar</button>
         </section>        
         <section class="entradas" id="parteCuatro" oculto>
+            <p>¡Gracias por su Compra y su Visita!</p>
+            <p>Disfrute su excursión :)</p>
             <button class="btn btn-outline-primary" type="button" onclick="mostrar(3)">Volver</button>
             <button class="btn btn-primary" type="button" onclick="mostrar(5)">Finalizar</button>
         </section>
