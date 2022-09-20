@@ -1,4 +1,11 @@
-.coleccion_container{
-    max-width: 90%;
-    margin: auto;
+main{
+    width: 90%;
+    margin:5vh auto;
+}
+
+
+@media screen and (min-width:1023px){
+    .coleccion__container{
+        margin-top: 2vh;
+    }
 }

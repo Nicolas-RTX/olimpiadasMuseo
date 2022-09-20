@@ -58,7 +58,22 @@ function cerrarMapa3(){
 }
 function mostrarArea(area) {
     cerrarAreas();
-    document.querySelectorAll(`.${area}`).forEach(elemento => elemento.style.display="block");
+    
+    
+        document.querySelectorAll(`.${area}`).forEach(elemento => elemento.style.display="block");
+    
+}
+function mostrarArea2(area) {
+    cerrarAreas();
+    
+        document.querySelectorAll(`.${area}`).forEach(elemento => elemento.style.display="block");
+    
+}
+function mostrarArea3(area) {
+    cerrarAreas();
+   
+        document.querySelectorAll(`.${area}`).forEach(elemento => elemento.style.display="block");
+    
 }
 function cerrarAreas() {
     document.querySelectorAll('.areas').forEach(elemento => elemento.style.display="none");
