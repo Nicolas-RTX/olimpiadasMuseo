@@ -7,19 +7,23 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/indexStyles.css">
     <link rel="stylesheet" href="css/templateStyles.css">
+    <link rel="stylesheet" href="css/coleccion.css">
     <title>Museo</title>
 </head>
 <body>
   
-  <?php include('addons/background.php') ?>
+    <?php 
+        include('addons/background.php');
+        include('addons/configLanguage.php')
+    ?>
     <header>
-        <nav class="nav__bar nav__bar--desktop">
+    <nav class="nav__bar nav__bar--desktop">
             <img class="nav__logo" src="img/logoarte.png" alt="Museo de Arte">
             <ul class="nav__list">
-                <a class="nav__link" href="index.php"><li class="nav__item">VISITA</li></a>
-                <a class="nav__link" href="exhibicion.php"><li class="nav__item">EXHIBICIÓN</li></a>
-                <a class="nav__link" href="#"><li class="nav__item">MUSEO</li></a>
-                <a class="nav__link" href="#"><li class="nav__item">COLECCIONES</li></a>
+                <a class="nav__link" href="index.php"><li class="nav__item"><?php echo $lang['visit'] ?></li></a>
+                <a class="nav__link" href="exhibicion.php"><li class="nav__item"><?php echo $lang['exhibition'] ?></li></a>
+                <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['museum']?></li></a>
+                <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['collections'] ?></li></a>
                 <svg class="nav__item nav__acces" alt="Icono de Accesibilidad" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g><path d="m28 21c2.2091 0 4-1.7909 4-4s-1.7909-4-4-4-4 1.7909-4 4 1.7909 4 4 4z"/><path d="m30.5 30c0 1.1164.2268 2.2212.6666 3.2474l3.7121 8.6617c.3264.7615-.0264 1.6433-.7878 1.9696-.7615.3264-1.6433-.0264-1.9696-.7878l-3.7122-8.6617c-.0288-.0672-.0569-.1346-.0843-.2023-.0552-.136-.1863-.2269-.333-.2269-.1503 0-.2837.0951-.336.236-.0773.208-.1597.4144-.2474.6188l-3.5297 8.2361c-.3263.7614-1.2081 1.1142-1.9696.7878-.7614-.3263-1.1142-1.2081-.7878-1.9696l3.5297-8.236c.5602-1.307.849-2.7142.849-4.1362v-2.6775c-3.6006-.4075-6.9399-1.6847-9.7997-3.6164-.6865-.4637-.8672-1.3961-.4035-2.0826s1.3962-.8671 2.0826-.4034c3.0314 2.0475 6.6841 3.243 10.6206 3.243s7.5892-1.1955 10.6206-3.243c.6865-.4637 1.6189-.2831 2.0826.4034s.283 1.6189-.4035 2.0826c-2.8598 1.9317-6.1991 3.2089-9.7997 3.6164z"/><path clip-rule="evenodd" d="m52 28c0 13.2548-10.7452 24-24 24s-24-10.7452-24-24 10.7452-24 24-24 24 10.7452 24 24zm-3 0c0 11.598-9.402 21-21 21s-21-9.402-21-21 9.402-21 21-21 21 9.402 21 21z" fill-rule="evenodd"/></g></svg>
             </ul>
         </nav>
@@ -29,10 +33,10 @@
             <li> 
               <svg class=" nav__item nav__acces" id="open__menu" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">.st0{fill:#f5f5f5;}</style><g><g><path class="st0" d="M381,190.9H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,190.9,381,190.9z"/></g><g><path class="st0" d="M381,361.1H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,361.1,381,361.1z"/></g><g><path class="st0" d="M381,276H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,276,381,276z"/></g></g></svg>
                 <ul class="submenu">
-                  <a class="nav__link" href="index.php"><li class="nav__item">VISITA</li></a>
-                  <a class="nav__link" href="exhibicion.php"><li class="nav__item">EXHIBICIÓN</li></a>
-                  <a class="nav__link" href="#"><li class="nav__item">MUSEO</li></a>
-                  <a class="nav__link" href="#"><li class="nav__item">COLECCIONES</li></a>
+                  <a class="nav__link" href="index.php"><li class="nav__item"><?php echo $lang['visit'] ?></li></a>
+                  <a class="nav__link" href="exhibicion.php"><li class="nav__item"><?php echo $lang['exhibition'] ?></li></a>
+                  <a class="nav__link" href="#"><li class="nav__item"<?php echo $lang['museum']?></li></a>
+                  <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['collections'] ?></li></a>
                 </ul>
             </li>
           </ul>
@@ -41,42 +45,47 @@
 
     <main>
         
-       <section class="coleccion__container">
-          <h2><b>NUESTRA COLECCIÓN</b></h2>
-          <article>
-            <div class="row row-cols-1 row-cols-md-3 g-1">
-              <a href="">
-                <div  class="col">
-                  <div class="card text-bg-dark">
-                    <img src="img/slider/a.png" class="card-img" alt="...">
-                    <div class="card-img-overlay">
-                      <h5 class="card-title">Obreas maestras</h5>
-                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nam?</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="">
-                <div class="col">
+    <section class="coleccion__container">
+        <h1><b><?php echo $lang['coleccion__welcome'] ?></b></h1>
+        <article>
+          <div class="row row-cols-1 row-cols-md-3 g-1">
+              <div class="col">
                 <div class="card text-bg-dark">
-                  <img src="img/slider/b.png" class="card-img" alt="...">
+                  <img src="img/slider/a.png" class="card-img" alt="...">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Paisajes</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, culpa.!</p>
+                    <h5 class="card-title"> <?php echo $lang['exhibicion__card__tittle1']?> </h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nam?</p>
                   </div>
                 </div>
               </div>
-            </a> 
+              <div class="col">
+              <div class="card text-bg-dark">
+                <img src="img/slider/b.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h5 class="card-title"> <?php echo $lang['exhibicion__card__tittle2']?></h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, culpa.!</p>
+                </div>
+              </div>
             </div>
-          </article>
-       </section>
-      
+            <div class="col">
+              <div class="card text-bg-dark">
+                <img src="img/slider/c.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <h5 class="card-title"> <?php echo $lang['exhibicion__card__tittle3']?></h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </article>
+     </section>
         
     </main>
     
     <footer class="footer">
         <div class="datos__container">
-          <h2 class="datos__tittle">CONTACTO</h2>
+          <h2 class="datos__tittle"><?php echo $lang['footer__tittle'] ?></h2>
           <ul class="datos__list">
             <li class="datos__item"><b>Dirección | Address</b></li>
             <li class="datos__item">25 de Mayo 131 - B1824</li>
@@ -94,16 +103,18 @@
 
         <div class="formulario__container">
           <form class="form-floating" action="">
-            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Asunto">
-            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Nombre">
-            <input class="form__input" type="email" class="form-control" id="floatingInputValue" placeholder="Introduzca su email">
-            <textarea class="form__input" placeholder="Deje su comentario aquí" id="floatingTextarea"></textarea>
-            <button type="reset" class="btn btn-primary btn-lg">Borrar</button>
-            <button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
+            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Asunto | subject">
+            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Nombre | name">
+            <input class="form__input" type="email" class="form-control" id="floatingInputValue" placeholder="Introduzca su email | enter your e-mail">
+            <textarea class="form__input" placeholder="Deje su comentario aquí | leave your comment here" id="floatingTextarea"></textarea>
+            <button type="reset" class="btn btn-primary btn-lg"><?php echo $lang['footer__form__button__reset'] ?></button>
+            <button type="submit" class="btn btn-secondary btn-lg"><?php echo $lang['footer__form__button__send'] ?></button>
           </form>
         </div>
     </footer>
-
+    <div>
+    <a href="coleccion.php?lang=es"> <?php echo $lang['es'] ?> </a> | <a href="coleccion.php?lang=en"> <?php echo $lang['en'] ?></a>          
+    </div>
     <div class="accesibilidad">
       <svg class="nav__item nav__acces btn__accesibilidad" alt="Icono de Accesibilidad" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g><path d="m28 21c2.2091 0 4-1.7909 4-4s-1.7909-4-4-4-4 1.7909-4 4 1.7909 4 4 4z"/><path d="m30.5 30c0 1.1164.2268 2.2212.6666 3.2474l3.7121 8.6617c.3264.7615-.0264 1.6433-.7878 1.9696-.7615.3264-1.6433-.0264-1.9696-.7878l-3.7122-8.6617c-.0288-.0672-.0569-.1346-.0843-.2023-.0552-.136-.1863-.2269-.333-.2269-.1503 0-.2837.0951-.336.236-.0773.208-.1597.4144-.2474.6188l-3.5297 8.2361c-.3263.7614-1.2081 1.1142-1.9696.7878-.7614-.3263-1.1142-1.2081-.7878-1.9696l3.5297-8.236c.5602-1.307.849-2.7142.849-4.1362v-2.6775c-3.6006-.4075-6.9399-1.6847-9.7997-3.6164-.6865-.4637-.8672-1.3961-.4035-2.0826s1.3962-.8671 2.0826-.4034c3.0314 2.0475 6.6841 3.243 10.6206 3.243s7.5892-1.1955 10.6206-3.243c.6865-.4637 1.6189-.2831 2.0826.4034s.283 1.6189-.4035 2.0826c-2.8598 1.9317-6.1991 3.2089-9.7997 3.6164z"/><path clip-rule="evenodd" d="m52 28c0 13.2548-10.7452 24-24 24s-24-10.7452-24-24 10.7452-24 24-24 24 10.7452 24 24zm-3 0c0 11.598-9.402 21-21 21s-21-9.402-21-21 9.402-21 21-21 21 9.402 21 21z" fill-rule="evenodd"/></g></svg>
     </div>

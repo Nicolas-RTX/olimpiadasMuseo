@@ -10,7 +10,9 @@
     <title>Museo</title>
 </head>
 <body>
-  <?php include('addons/background.php') ?>
+  <?php include('addons/background.php');
+        include('addons/configLanguage.php')
+  ?>
 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
         <div class="carousel-indicators">
@@ -63,10 +65,10 @@
         <nav class="nav__bar nav__bar--desktop">
             <img class="nav__logo" src="img/logoarte.png" alt="Museo de Arte">
             <ul class="nav__list">
-                <a class="nav__link" href="#"><li class="nav__item">VISITA</li></a>
-                <a class="nav__link" href="exhibicion.php"><li class="nav__item">EXHIBICIÓN</li></a>
-                <a class="nav__link" href="#"><li class="nav__item">MUSEO</li></a>
-                <a class="nav__link" href="coleccion.php"><li class="nav__item">COLECCIONES</li></a>
+                <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['visit'] ?></li></a>
+                <a class="nav__link" href="exhibicion.php"><li class="nav__item"><?php echo $lang['exhibition'] ?></li></a>
+                <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['museum'] ?></li></a>
+                <a class="nav__link" href="coleccion.php"><li class="nav__item"><?php echo $lang['collections'] ?></li></a>
                 <svg class="nav__item nav__acces" alt="Icono de Accesibilidad" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g><path d="m28 21c2.2091 0 4-1.7909 4-4s-1.7909-4-4-4-4 1.7909-4 4 1.7909 4 4 4z"/><path d="m30.5 30c0 1.1164.2268 2.2212.6666 3.2474l3.7121 8.6617c.3264.7615-.0264 1.6433-.7878 1.9696-.7615.3264-1.6433-.0264-1.9696-.7878l-3.7122-8.6617c-.0288-.0672-.0569-.1346-.0843-.2023-.0552-.136-.1863-.2269-.333-.2269-.1503 0-.2837.0951-.336.236-.0773.208-.1597.4144-.2474.6188l-3.5297 8.2361c-.3263.7614-1.2081 1.1142-1.9696.7878-.7614-.3263-1.1142-1.2081-.7878-1.9696l3.5297-8.236c.5602-1.307.849-2.7142.849-4.1362v-2.6775c-3.6006-.4075-6.9399-1.6847-9.7997-3.6164-.6865-.4637-.8672-1.3961-.4035-2.0826s1.3962-.8671 2.0826-.4034c3.0314 2.0475 6.6841 3.243 10.6206 3.243s7.5892-1.1955 10.6206-3.243c.6865-.4637 1.6189-.2831 2.0826.4034s.283 1.6189-.4035 2.0826c-2.8598 1.9317-6.1991 3.2089-9.7997 3.6164z"/><path clip-rule="evenodd" d="m52 28c0 13.2548-10.7452 24-24 24s-24-10.7452-24-24 10.7452-24 24-24 24 10.7452 24 24zm-3 0c0 11.598-9.402 21-21 21s-21-9.402-21-21 9.402-21 21-21 21 9.402 21 21z" fill-rule="evenodd"/></g></svg>
             </ul>
         </nav>
@@ -76,10 +78,10 @@
             <li> 
               <svg class=" nav__item nav__acces" id="open__menu" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">.st0{fill:#f5f5f5;}</style><g><g><path class="st0" d="M381,190.9H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,190.9,381,190.9z"/></g><g><path class="st0" d="M381,361.1H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,361.1,381,361.1z"/></g><g><path class="st0" d="M381,276H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,276,381,276z"/></g></g></svg>
                 <ul class="submenu">
-                  <a class="nav__link" href="#"><li class="nav__item">VISITA</li></a>
-                  <a class="nav__link" href="exhibicion.php"><li class="nav__item">EXHIBICIÓN</li></a>
-                  <a class="nav__link" href="#"><li class="nav__item">MUSEO</li></a>
-                  <a class="nav__link" href="coleccion.php"><li class="nav__item">COLECCIONES</li></a>
+                  <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['visit'] ?></li></a>
+                  <a class="nav__link" href="exhibicion.php"><li class="nav__item"><?php echo $lang['exhibition'] ?></li></a>
+                  <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['museum'] ?></li></a>
+                  <a class="nav__link" href="coleccion.php"><li class="nav__item"><?php echo $lang['collections'] ?></li></a>
                 </ul>
             </li>
           </ul>
@@ -89,29 +91,31 @@
     <main>
       
         <section class="cards__seciton">
-            <h2>¡BIENVENIDOS AL <b>MUSEO DE LANÚS!</b></h2>
-            <h3><b>PLANEÁ TU VSITA</b></h3> 
+            <h1><?php echo $lang['welcome']?></h1>
+            <h3><b><?php echo $lang['welcomet']?></b></h3>
+             
+            
             <article class="cards__container">
               
             <div class="card">
               <img src="img/ticket.svg" class="card-img-top" alt="">
               <div class="card-body">
-                  <h5><span class="badge text-bg-primary">VALOR DEL TICKET</span></h5>
-                  <a class="links" href="entradas.php"><h4><B>¡COMPRA TU ENTRADA!</B></h4></a>
-                  <p class="card-text"><b>GENERAL ONLINE: $400</b></p>
-                  <p class="card-text"><b>GENERAL EN BOLETERIA: $500</b></p>
-                  <p class="card-text"><b>MENORES DE 13 AÑOS: GRATIS</b></p>
-                  <p class="card-text">Jubilados y pensionados (con carnet), Estudiantes universidades Nacionales (con libreta o certificadO de alumno regular) o personas con discapacidad: </p>
-                  <p><b>GRATIS</b></p>
+                  <h5><span class="badge text-bg-primary"><?php echo $lang['card__tittle1'] ?></span></h5>
+                  <a class="links" href="entradas.php"><h4><B><?php echo $lang['card__link'] ?></B></h4></a>
+                  <p class="card-text"><b><?php echo $lang['costOnline'] ?></b></p>
+                  <p class="card-text"><b><?php echo $lang['costFisic'] ?></b></p>
+                  <p class="card-text"><b><?php echo $lang['costMinor'] ?></b></p>
+                  <p class="card-text"><?php echo $lang['costOthers'] ?> </p>
+                  <p><b><?php echo $lang['free'] ?>  </b></p>
                   <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur placeat esse. Suscipit rerum atque tempore aliquid excepturi dolor iusto eaque quas? Ea, culpa! Deserunt eius fugit voluptatibus possimus quam dolores rem fuga ad, nostrum, aliquid a sunt necessitatibus quae similique totam numquam reiciendis ea atque, ex iure non architecto!</p>
               </div>
             </div>
             <div class="card">
               <img src="img/horario.svg" class="card-img-top" alt="">
               <div class="card-body">
-                  <h5><span class="badge text-bg-primary">HORARIO</span></h5>
-                  <p class="card-text">LUNES A JUEVES: 10:00 a 18:00</p>
-                  <p class="card-text">VIERNES, SABADOS DOMINGOS Y FERIADOS: 15:00 a 18:00</p>
+                  <h5><span class="badge text-bg-primary"> <?php echo $lang['card__tittle2'] ?></span></h5>
+                  <p class="card-text"><?php echo $lang['time'] ?></p>
+                  <p class="card-text"><?php echo $lang['timeSpecial'] ?> </p>
                   <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur placeat esse. Suscipit rerum atque tempore aliquid excepturi dolor iusto eaque quas? Ea, culpa! Deserunt eius fugit voluptatibus possimus quam dolores rem fuga ad, nostrum, aliquid a sunt necessitatibus quae similique totam numquam reiciendis ea atque, ex iure non architecto!</p>
                   <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur placeat esse. Suscipit rerum atque tempore aliquid excepturi dolor iusto eaque quas? Ea, culpa! Deserunt eius fugit voluptatibus possimus quam dolores rem fuga ad, nostrum, aliquid a sunt necessitatibus quae similique totam numquam reiciendis ea atque, ex iure non architecto!</p>
 
@@ -120,16 +124,16 @@
             <div class="card">
               <img src="img/localizacion.svg" class="card-img-top" alt="">
               <div class="card-body">
-                  <h5><span class="badge text-bg-primary">LOCALIZACIÓN</span></h5>
-                  <p class="card-text"><b>Dirección: 25 de Mayo 131, B1824 Lanús, Provincia de Buenos Aires</b></p>
+                  <h5><span class="badge text-bg-primary"><?php echo $lang['card__tittle3'] ?> </span></h5>
+                  <p class="card-text"><b><?php echo $lang['address'] ?>: 25 de Mayo 131, B1824 Lanús, Provincia de Buenos Aires</b></p>
                   <iframe class="card__maps" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5516.079647935739!2d-58.393756558127095!3d-34.70819183814083!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2a53525ef6c60945!2sMuseo%20de%20Arte%20Contempor%C3%A1neo%20del%20Sur!5e0!3m2!1ses-419!2sar!4v1663177991473!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  <p class="card-text"><b>DESDE CIUDAD DE BUENOS AIRES:</b></p>
+                  <p class="card-text"><b><?php echo $lang['advice'] ?> </b></p>
                   <div class="indicaciones">
-                    <p class="card-text"><b>En tren</b></p>
+                    <p class="card-text"><b><?php echo $lang['train'] ?></b></p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore necessitatibus dolorem.</p>
                     <p class="card-text"><b>En Omnibus</b></p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore necessitatibus dolorem.</p>
-                    <p class="card-text"><b>En auto</b></p>
+                    <p class="card-text"><b><?php echo $lang['car'] ?></b></p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore necessitatibus dolorem.</p>
                   </div>
               </div>
@@ -139,25 +143,25 @@
 
         <section>
             <div class="visita__container">
-              <h3 class="visita__tittle">VISITAS GUIADAS AL PÚBLICO</h3>
-              <h5 class="visita__subtittle">Horarios</h5>
+              <h3 class="visita__tittle"><?php echo $lang['visitPublic__tittle'] ?></h3>
+              <h5 class="visita__subtittle"><?php echo $lang['visitPublic__schedule'] ?></h5>
               <ul class="visita__list">
-                <li class="visita__item">Lunes a Jueves: 11:00, 15:00 y 18:00</li>
-                <li class="visita__item">Viernes a Domingos: 15:00 y 18:00</li>
-                <li class="visita__item">Feriados: 15:00</li>
+                <li class="visita__item"><?php echo $lang['visitPublic__week'] ?></li>
+                <li class="visita__item"><?php echo $lang['visitPublic__week-end'] ?></li>
+                <li class="visita__item"><?php echo $lang['visitPublic__holidays'] ?></li>
               </ul>
-              <p class="visita__text"><i>Gratuita, con pago de entrada y sin inscripcion.</i></p>
+              <p class="visita__text"><i><?php echo $lang['visitPublic__cost'] ?></i></p>
               <p class="visita__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti pariatur dignissimos ipsum eaque quos, nam odio? Asperiores corrupti tempora repudiandae voluptate, officia incidunt? Ducimus sint quas dicta, voluptates tenetur cum.</p>
             </div>
 
             <div class="visitaEsc__container">
-              <h3 class="visitaEsc__tittle">VISITAS GUIADAS A ESCUELAS</h3>
-              <h5 class="visitaEsc__subtittle">Horarios</h5>
+              <h3 class="visitaEsc__tittle"><?php echo $lang['visitSchool__tittle'] ?></h3>
+              <h5 class="visitaEsc__subtittle"><?php echo $lang['visitPublic__schedule'] ?></h5>
               <ul class="visitaEsc__list">
-                <li class="visitaEsc__item">Lunes a Jueves: 9:30, 14:00</li>
-                <li class="visitaEsc__item">Viernes: 11:00 y 15:00</li>
+                <li class="visitaEsc__item"><?php echo $lang['visitSchool__week'] ?></li>
+                <li class="visitaEsc__item"><?php echo $lang['visitSchool__week-end'] ?><</li>
               </ul>
-              <p class="visitaEsc__text"><i>Destinada a nivel primario y secundario</i></p>
+              <p class="visitaEsc__text"><i><?php echo $lang['visitSchool__text'] ?></i></p>
               <p class="visitaEsc__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus et quisquam consectetur odit! Ducimus dolores vitae reprehenderit velit aliquam placeat recusandae, veniam omnis! Illum mollitia vel rem quibusdam tempore aut?</p>
             </div>
         </section>
@@ -166,7 +170,7 @@
     
     <footer class="footer">
         <div class="datos__container">
-          <h2 class="datos__tittle">CONTACTO</h2>
+          <h2 class="datos__tittle"><?php echo $lang['footer__tittle'] ?></h2>
           <ul class="datos__list">
             <li class="datos__item"><b>Dirección | Address</b></li>
             <li class="datos__item">25 de Mayo 131 - B1824</li>
@@ -184,16 +188,18 @@
 
         <div class="formulario__container">
           <form class="form-floating" action="">
-            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Asunto">
-            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Nombre">
-            <input class="form__input" type="email" class="form-control" id="floatingInputValue" placeholder="Introduzca su email">
-            <textarea class="form__input" placeholder="Deje su comentario aquí" id="floatingTextarea"></textarea>
-            <button type="reset" class="btn btn-primary btn-lg">Borrar</button>
-            <button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
+            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Asunto | subject">
+            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Nombre | name">
+            <input class="form__input" type="email" class="form-control" id="floatingInputValue" placeholder="Introduzca su email | enter your e-mail">
+            <textarea class="form__input" placeholder="Deje su comentario aquí | leave your comment here" id="floatingTextarea"></textarea>
+            <button type="reset" class="btn btn-primary btn-lg"><?php echo $lang['footer__form__button__reset'] ?></button>
+            <button type="submit" class="btn btn-secondary btn-lg"><?php echo $lang['footer__form__button__send'] ?></button>
           </form>
         </div>
     </footer>
-
+    <div>
+    <a href="index.php?lang=es"> <?php echo $lang['es'] ?> </a> | <a href="index.php?lang=en"> <?php echo $lang['en'] ?></a>          
+    </div>
     <div class="accesibilidad">
       <svg class="nav__item nav__acces btn__accesibilidad" alt="Icono de Accesibilidad" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g><path d="m28 21c2.2091 0 4-1.7909 4-4s-1.7909-4-4-4-4 1.7909-4 4 1.7909 4 4 4z"/><path d="m30.5 30c0 1.1164.2268 2.2212.6666 3.2474l3.7121 8.6617c.3264.7615-.0264 1.6433-.7878 1.9696-.7615.3264-1.6433-.0264-1.9696-.7878l-3.7122-8.6617c-.0288-.0672-.0569-.1346-.0843-.2023-.0552-.136-.1863-.2269-.333-.2269-.1503 0-.2837.0951-.336.236-.0773.208-.1597.4144-.2474.6188l-3.5297 8.2361c-.3263.7614-1.2081 1.1142-1.9696.7878-.7614-.3263-1.1142-1.2081-.7878-1.9696l3.5297-8.236c.5602-1.307.849-2.7142.849-4.1362v-2.6775c-3.6006-.4075-6.9399-1.6847-9.7997-3.6164-.6865-.4637-.8672-1.3961-.4035-2.0826s1.3962-.8671 2.0826-.4034c3.0314 2.0475 6.6841 3.243 10.6206 3.243s7.5892-1.1955 10.6206-3.243c.6865-.4637 1.6189-.2831 2.0826.4034s.283 1.6189-.4035 2.0826c-2.8598 1.9317-6.1991 3.2089-9.7997 3.6164z"/><path clip-rule="evenodd" d="m52 28c0 13.2548-10.7452 24-24 24s-24-10.7452-24-24 10.7452-24 24-24 24 10.7452 24 24zm-3 0c0 11.598-9.402 21-21 21s-21-9.402-21-21 9.402-21 21-21 21 9.402 21 21z" fill-rule="evenodd"/></g></svg>
     </div>

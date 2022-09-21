@@ -41,4 +41,11 @@ main{
     .img__card{
         width: 20vw;
      }
+    
+}
+
+@media screen and (min-width:1023px){
+    .coleccion__container{
+        margin-top: 2vh;
+    }
 }

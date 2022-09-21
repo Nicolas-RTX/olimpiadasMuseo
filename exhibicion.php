@@ -11,16 +11,18 @@
     <title>Museo</title>
 </head>
 <body>
-  <?php include('addons/background.php') ?>
-  
+    <?php 
+        include('addons/background.php');
+        include('addons/configLanguage.php')
+    ?>
     <header>
         <nav class="nav__bar nav__bar--desktop">
             <img class="nav__logo" src="img/logoarte.png" alt="Museo de Arte">
             <ul class="nav__list">
-                <a class="nav__link" href="index.php"><li class="nav__item">VISITA</li></a>
-                <a class="nav__link" href="#"><li class="nav__item">EXHIBICIÓN</li></a>
-                <a class="nav__link" href="#"><li class="nav__item">MUSEO</li></a>
-                <a class="nav__link" href="coleccion.php"><li class="nav__item">COLECCIONES</li></a>
+                <a class="nav__link" href="index.php"><li class="nav__item"><?php echo $lang['visit'] ?></li></a>
+                <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['exhibition'] ?></li></a>
+                <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['museum']?></li></a>
+                <a class="nav__link" href="coleccion.php"><li class="nav__item"><?php echo $lang['collections'] ?></li></a>
                 <svg class="nav__item nav__acces" alt="Icono de Accesibilidad" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g><path d="m28 21c2.2091 0 4-1.7909 4-4s-1.7909-4-4-4-4 1.7909-4 4 1.7909 4 4 4z"/><path d="m30.5 30c0 1.1164.2268 2.2212.6666 3.2474l3.7121 8.6617c.3264.7615-.0264 1.6433-.7878 1.9696-.7615.3264-1.6433-.0264-1.9696-.7878l-3.7122-8.6617c-.0288-.0672-.0569-.1346-.0843-.2023-.0552-.136-.1863-.2269-.333-.2269-.1503 0-.2837.0951-.336.236-.0773.208-.1597.4144-.2474.6188l-3.5297 8.2361c-.3263.7614-1.2081 1.1142-1.9696.7878-.7614-.3263-1.1142-1.2081-.7878-1.9696l3.5297-8.236c.5602-1.307.849-2.7142.849-4.1362v-2.6775c-3.6006-.4075-6.9399-1.6847-9.7997-3.6164-.6865-.4637-.8672-1.3961-.4035-2.0826s1.3962-.8671 2.0826-.4034c3.0314 2.0475 6.6841 3.243 10.6206 3.243s7.5892-1.1955 10.6206-3.243c.6865-.4637 1.6189-.2831 2.0826.4034s.283 1.6189-.4035 2.0826c-2.8598 1.9317-6.1991 3.2089-9.7997 3.6164z"/><path clip-rule="evenodd" d="m52 28c0 13.2548-10.7452 24-24 24s-24-10.7452-24-24 10.7452-24 24-24 24 10.7452 24 24zm-3 0c0 11.598-9.402 21-21 21s-21-9.402-21-21 9.402-21 21-21 21 9.402 21 21z" fill-rule="evenodd"/></g></svg>
             </ul>
         </nav>
@@ -30,10 +32,10 @@
             <li> 
               <svg class=" nav__item nav__acces" id="open__menu" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">.st0{fill:#f5f5f5;}</style><g><g><path class="st0" d="M381,190.9H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,190.9,381,190.9z"/></g><g><path class="st0" d="M381,361.1H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,361.1,381,361.1z"/></g><g><path class="st0" d="M381,276H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,276,381,276z"/></g></g></svg>
                 <ul class="submenu">
-                  <a class="nav__link" href="index.php"><li class="nav__item">VISITA</li></a>
-                  <a class="nav__link" href="#"><li class="nav__item">EXHIBICIÓN</li></a>
-                  <a class="nav__link" href="#"><li class="nav__item">MUSEO</li></a>
-                  <a class="nav__link" href="coleccion.php"><li class="nav__item">COLECCIONES</li></a>
+                  <a class="nav__link" href="index.php"><li class="nav__item"><?php echo $lang['visit'] ?></li></a>
+                  <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['exhibition'] ?></li></a>
+                  <a class="nav__link" href="#"><li class="nav__item"<?php echo $lang['museum']?></li></a>
+                  <a class="nav__link" href="coleccion.php"><li class="nav__item"><?php echo $lang['collections'] ?></li></a>
                 </ul>
             </li>
           </ul>
@@ -42,15 +44,15 @@
 
     <main>
       <section class="coleccion__container">
-        <h1><b>¡BIENVENIDOS A NUESTRO RECORRIDO POR EL MUSEO DE ARTE DE LANÚS!</b></h1>
-        <h4>Dale click a alguna de estas colecciones para veer donde se situal y su contenido</h4>
+        <h1><b><?php echo $lang['exhibicion__welcome'] ?></b></h1>
+        <h4><?php echo $lang['exhibicion__tittle'] ?></h4>
         <article>
           <div class="row row-cols-1 row-cols-md-3 g-1">
               <div class="col" onclick="mostrarMapa1()" ondblclick="cerrarmapa1()">
                 <div class="card text-bg-dark">
                   <img src="img/slider/a.png" class="card-img" alt="...">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">Obreas maestras</h5>
+                    <h5 class="card-title"> <?php echo $lang['exhibicion__card__tittle1']?> </h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, nam?</p>
                   </div>
                 </div>
@@ -59,7 +61,7 @@
               <div class="card text-bg-dark">
                 <img src="img/slider/b.png" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                  <h5 class="card-title">Paisajes</h5>
+                  <h5 class="card-title"> <?php echo $lang['exhibicion__card__tittle2']?></h5>
                   <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, culpa.!</p>
                 </div>
               </div>
@@ -68,7 +70,7 @@
               <div class="card text-bg-dark">
                 <img src="img/slider/c.png" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                  <h5 class="card-title">Arte argentino</h5>
+                  <h5 class="card-title"> <?php echo $lang['exhibicion__card__tittle3']?></h5>
                   <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
               </div>
@@ -80,7 +82,7 @@
        <section class="floor">  
           
           <article class="container__floor" id="container__groundFloor">
-            <h2>PLANTA BAJA</h2>      
+            <h2> <?php echo $lang['exhibicion__floor']?></h2>      
             <svg version="1.1" id="groundFloor" class="floor__img" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="581px" height="381px" viewBox="0 0 581 381" enable-background="new 0 0 581 381" xml:space="preserve">
               <g id="area0">
                 <rect id="fondo0" x="233" y="214.293" fill="#F5F5F5" width="108" height="113.707"></rect>
@@ -117,32 +119,32 @@
                 <circle id="punto6" fill="#BF311A" cx="120.5" cy="163" r="10"></circle>
                 <text id="numero6" x="116.1094" y="167.9424" fill="#FFFFFF" font-family="'ArialMT'" font-size="20">6</text>
               </g>
-              <g id="area7" onclick="mostrarArea('area7')">
+              <g id="area7" onclick="mostrarArea2('area7')">
                 <rect id="fondo7" x="165" y="120" fill="#F5F5F5" width="45" height="52"></rect>
                 <circle id="punto7" fill="#BF311A" cx="187.5" cy="163" r="10"></circle>
                 <text id="numero7" x="183.1094" y="167.917" fill="#FFFFFF" font-family="'ArialMT'" font-size="20">7</text>
               </g>
-              <g id="area8" onclick="mostrarArea('area8')">
+              <g id="area8" onclick="mostrarArea2('area8')">
                 <rect id="fondo8" x="214" y="120" fill="#F5F5F5" width="34" height="52"></rect>
                 <circle id="punto8" fill="#BF311A" cx="231" cy="163" r="10"></circle>
                 <text id="numero8" x="226.6094" y="167.917" fill="#FFFFFF" font-family="'ArialMT'" font-size="20">8</text>
               </g>
-              <g id="area9" onclick="mostrarArea('area9')">
+              <g id="area9" onclick="mostrarAreaC('area9')">
                 <rect id="fondo9" x="162" y="176" fill="#F5F5F5" width="83" height="33"></rect>
                 <circle id="punto9" fill="#BF311A" cx="203.5" cy="195.5" r="10"></circle>
                 <text id="numero9" x="199.1094" y="200.2881" fill="#FFFFFF" font-family="'ArialMT'" font-size="20">9</text>
               </g>
-              <g id="area10" onclick="mostrarArea('area10')">
+              <g id="area10" onclick="mostrarAreaC('area10')">
                 <rect id="fondo10" x="252" y="120" fill="#F5F5F5" width="72" height="86"></rect>
                 <circle id="punto10" fill="#BF311A" cx="286.898" cy="163" r="11"></circle>
                 <text id="numero10" x="278.1172" y="167.5771" fill="#FFFFFF" font-family="'ArialMT'" font-size="18">10</text>
               </g>
-              <g id="area11" onclick="mostrarArea('area11')">
+              <g id="area11" onclick="mostrarAreaC('area11')">
                 <rect id="fondo11" x="328" y="120" fill="#F5F5F5" width="40" height="61"></rect>
                 <circle id="punto11" fill="#BF311A" cx="348" cy="163" r="11"></circle>
                 <text id="numero11" x="339.4043" y="167.5635" fill="#FFFFFF" font-family="'ArialMT'" font-size="18">11</text>
               </g>
-              <g id="area12" onclick="mostrarArea('area12')">
+              <g id="area12" onclick="mostrarArea3('area12')">
                 <rect id="fondo12" x="328" y="185" fill="#F5F5F5" width="58" height="21"></rect>
                 <circle id="punto12" fill="#BF311A" cx="357" cy="195.5" r="11"></circle>
                 <text id="numero12" x="347.2188" y="201.0234" fill="#FFFFFF" font-family="'ArialMT'" font-size="18">12</text>
@@ -218,7 +220,7 @@
                 <text id="nombre28" x="169.4634" y="305.1035" font-family="'ArialMT'" font-size="6">Tienda del museo</text>
               </g>
               <g id="mapa0">
-                <path id="path4452" fill="#5E6E66" stroke="#5E6E66" stroke-width="0.5" stroke-miterlimit="10" d="M541,282v46h29v-46H541z
+                <path id="path4452" fill="#f5f5f5" stroke="#5E6E66" stroke-width="0.5" stroke-miterlimit="10" d="M541,282v46h29v-46H541z
                    M568,326h-25v-42h25V326z"></path>
                 
                   <line id="line4454" fill="none" stroke="#5E6E66" stroke-width="0.5" stroke-miterlimit="10" x1="543" y1="295.133" x2="554" y2="295.133"></line>
@@ -641,7 +643,7 @@
     
     <footer class="footer">
         <div class="datos__container">
-          <h2 class="datos__tittle">CONTACTO</h2>
+          <h2 class="datos__tittle"><?php echo $lang['footer__tittle'] ?></h2>
           <ul class="datos__list">
             <li class="datos__item"><b>Dirección | Address</b></li>
             <li class="datos__item">25 de Mayo 131 - B1824</li>
@@ -659,16 +661,18 @@
 
         <div class="formulario__container">
           <form class="form-floating" action="">
-            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Asunto">
-            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Nombre">
-            <input class="form__input" type="email" class="form-control" id="floatingInputValue" placeholder="Introduzca su email">
-            <textarea class="form__input" placeholder="Deje su comentario aquí" id="floatingTextarea"></textarea>
-            <button type="reset" class="btn btn-primary btn-lg">Borrar</button>
-            <button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
+            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Asunto | subject">
+            <input class="form__input" type="text" class="form-control" id="floatingInputValue" placeholder="Nombre | name">
+            <input class="form__input" type="email" class="form-control" id="floatingInputValue" placeholder="Introduzca su email | enter your e-mail">
+            <textarea class="form__input" placeholder="Deje su comentario aquí | leave your comment here" id="floatingTextarea"></textarea>
+            <button type="reset" class="btn btn-primary btn-lg"><?php echo $lang['footer__form__button__reset'] ?></button>
+            <button type="submit" class="btn btn-secondary btn-lg"><?php echo $lang['footer__form__button__send'] ?></button>
           </form>
         </div>
     </footer>
-
+    <div>
+    <a href="exhibicion.php?lang=es"> <?php echo $lang['es'] ?> </a> | <a href="exhibicion.php?lang=en"> <?php echo $lang['en'] ?></a>          
+    </div>
     <div class="accesibilidad">
       <svg class="nav__item nav__acces btn__accesibilidad" alt="Icono de Accesibilidad" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g><path d="m28 21c2.2091 0 4-1.7909 4-4s-1.7909-4-4-4-4 1.7909-4 4 1.7909 4 4 4z"/><path d="m30.5 30c0 1.1164.2268 2.2212.6666 3.2474l3.7121 8.6617c.3264.7615-.0264 1.6433-.7878 1.9696-.7615.3264-1.6433-.0264-1.9696-.7878l-3.7122-8.6617c-.0288-.0672-.0569-.1346-.0843-.2023-.0552-.136-.1863-.2269-.333-.2269-.1503 0-.2837.0951-.336.236-.0773.208-.1597.4144-.2474.6188l-3.5297 8.2361c-.3263.7614-1.2081 1.1142-1.9696.7878-.7614-.3263-1.1142-1.2081-.7878-1.9696l3.5297-8.236c.5602-1.307.849-2.7142.849-4.1362v-2.6775c-3.6006-.4075-6.9399-1.6847-9.7997-3.6164-.6865-.4637-.8672-1.3961-.4035-2.0826s1.3962-.8671 2.0826-.4034c3.0314 2.0475 6.6841 3.243 10.6206 3.243s7.5892-1.1955 10.6206-3.243c.6865-.4637 1.6189-.2831 2.0826.4034s.283 1.6189-.4035 2.0826c-2.8598 1.9317-6.1991 3.2089-9.7997 3.6164z"/><path clip-rule="evenodd" d="m52 28c0 13.2548-10.7452 24-24 24s-24-10.7452-24-24 10.7452-24 24-24 24 10.7452 24 24zm-3 0c0 11.598-9.402 21-21 21s-21-9.402-21-21 9.402-21 21-21 21 9.402 21 21z" fill-rule="evenodd"/></g></svg>
     </div>
