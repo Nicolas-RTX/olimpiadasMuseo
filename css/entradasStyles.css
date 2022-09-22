@@ -1,8 +1,7 @@
-
 .entradasForm {
     border-radius: 0px 0px 25px 25px;
     background: var(--blanco);
-    padding: 2vh 0vw;
+    padding: 2vh 4vw;
     width: 90vw;
 }
 
@@ -22,12 +21,14 @@
 .entradasHeader__icon {
     border: 3px solid var(--entradasColor1);
     transform: scale(1.05);
+    transition: 600ms all;
     border-radius: 100%;
     position: relative;
     z-index: 1;
 }
 .entradasHeader__svg {
     fill: var(--entradasColor1);
+    transition: 600ms all;
     padding: 12px;
     width: 48px;
 }
@@ -35,10 +36,11 @@
 .progress {
     border-bottom: 3px solid var(--entradasColor1);
     border-top: 3px solid var(--entradasColor1);
+    transition: 400ms all;
     border-radius: 0px;
     position: relative;
     width: 5vw;
-    top: 2.5vh;
+    top: 2vh;
 }
 .progress:nth-of-type(1) {
     border-left: 3px solid var(--entradasColor1);
@@ -50,7 +52,8 @@
 }
 
 .progress-bar {
-    transition: 400ms all;
+    transition: 200ms all;
+    width: 0%;
 }
 
 [icon-full] {
@@ -61,4 +64,58 @@
 }
 [bar-full] {
     width: 100%;
+}
+
+.entradasMid {
+    background: var(--blanco);
+    text-align: center;
+}
+.entradasMid > .badge {
+    margin: 2px ;
+}
+
+.form__fecha {
+    text-align: center;
+}
+
+.form__title {
+    text-align: center;
+}
+.form__horarios {
+    justify-content: space-evenly;
+    display: flex;
+}
+.form__flex {
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+}
+.form__flex-dos {
+    justify-content: center;
+    display: flex;
+}
+.form__flex-dos > .form-floating:first-child {
+    margin-right: 3px;
+}
+.form__flex-dos > .form-floating:last-child {
+    margin-left: 3px;
+}
+.form__flex-column {
+    flex-flow: column;
+    margin: 0px 3px;
+    display: flex;
+}
+.form__maxWitdh {
+    text-align: center;
+    width: 25vw;
+}
+.form-control {
+    text-align: center;
+}
+.form__controls {
+    justify-content: space-between;
+    display: flex;
+}
+.form__controls-primero {
+    justify-content: end;
 }

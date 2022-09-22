@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
     date_default_timezone_set("America/Argentina/Buenos_Aires");
     $hoy = date("Y-m-d", strtotime("now"));
     $fecha = date("Y-m-d", strtotime("last day of +2 month"));
@@ -29,81 +29,131 @@
             <div class="entradasHeader__icon" id="icon-4"><svg class="entradasHeader__svg" id="svg-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><g><path d="M26.474,70c-2.176,0-4.234-1.018-5.557-2.764L3.049,43.639C0.725,40.57,1.33,36.2,4.399,33.875 c3.074-2.326,7.441-1.717,9.766,1.35l11.752,15.518L55.474,3.285c2.035-3.265,6.332-4.264,9.604-2.232 c3.268,2.034,4.266,6.334,2.23,9.602l-34.916,56.06c-1.213,1.949-3.307,3.175-5.6,3.279C26.685,69.998,26.58,70,26.474,70z"/></g></svg></div>
             <div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" id="progess-5"></div></div>
         </section>
+        <?php if(isset($_SESSION['FLASH'])) {
+            echo "<section class='entradasMid'><p>Revise lo siguiente:</p>" . $_SESSION['FLASH'] . "</section>";
+            unset($_SESSION['FLASH']);
+        }?>
     </header>
 
-    <form class="entradasForm" action="entradasPosnet">
-        <section class="entradas" id="parteUno">
-            <h3>Día de la visita</h3>
-            <label for="fecha">Seleccione una fecha</label>
-            <input type="date" name="fecha" value="<?php echo $hoy; ?>" min="<?php echo $hoy; ?>" max="<?php echo $fecha; ?>">
+    <form class="entradasForm" action="entradasPosnet.php" method="POST">
 
-            <h3>Entradas Disponibles</h3>
+        <section class="entradas" id="parte-1">
 
-            <label for="general">General</label>
-            <input type="number" name="general" min="0" max="15" placeholder="0">
+            <h3 class="form__title">Día de la visita</h3>
+            
+            <div class="mb-3">
+                <input class="form__fecha form-control" type="date" name="fecha" value="<?php echo $hoy; ?>" min="<?php echo $hoy; ?>" max="<?php echo $fecha; ?>">
+            </div>
 
-            <label for="menores">Menores</label>
-            <input type="number" name="menores" min="0" max="15" placeholder="0">
+            <h3 class="form__title">Entradas</h3>
 
-            <label for="jubilados">Jubilado/Pensionado</label>
-            <input type="number" name="jubilados" min="0" max="15" placeholder="0">
+            <div class="form__flex">
+                <div class="form__flex-column mb-3">
+                    <label class="form__maxWitdh" for="general">General</label>
+                    <input class="form-control" type="number" name="general" id="general" min="0" max="15" placeholder="0">
+                </div>
 
-            <label for="estudiantes">Estudiantes Univ. Nacionales</label>
-            <input type="number" name="estudiantes" min="0" max="15" placeholder="0">
+                <div class="form__flex-column mb-3">
+                    <label class="form__maxWitdh" for="menores">Menores</label>
+                    <input class="form-control" type="number" name="menores" id="menores" min="0" max="15" placeholder="0">
+                </div>
 
-            <label for="discapacitados">Personas con discapacidad (Con Acompañante)</label>
-            <input type="number" name="discapacitados" min="0" max="15" placeholder="0">
+                <div class="form__flex-column mb-3">
+                    <label class="form__maxWitdh" for="jubilados">Jubilados</label>
+                    <input class="form-control" type="number" name="jubilados" id="jubilados" min="0" max="15" placeholder="0">
+                </div>
 
-            <h3>Horarios Disponibles</h3>
+                <div class="form__flex-column mb-3">
+                    <label class="form__maxWitdh" for="estudiantes">Estudiantes</label>
+                    <input class="form-control" type="number" name="estudiantes" id="estudiantes" min="0" max="15" placeholder="0">
+                </div>
 
-            <input type="radio" name="horario">
-            <label for="horario">10:00 - 14:00 hs</label>
+                <div class="form__flex-column mb-3">
+                    <label class="form__maxWitdh" for="discapacitados">Discapacitados</label>
+                    <input class="form-control" type="number" name="discapacitados" id="discapacitados" min="0" max="15" placeholder="0">
+                </div>
+            </div>
 
-            <input type="radio" name="horario">
-            <label for="horario">14:00 - 18:00 hs</label>
+            <h3 class="form__title">Horarios</h3>
 
-            <button class="btn btn-primary" type="button" onclick="mostrar(2)">Continuar</button>
+            <div class="form__horarios mb-3">
+                <div>
+                    <input class="form-check-input" type="radio" name="horario" id="horario1" value="1">
+                    <label class="form-check-label" for="horario1">10:00 - 14:00 hs</label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="radio" name="horario" id="horario2" value="2">
+                    <label class="form-check-label" for="horario2">14:00 - 18:00 hs</label>
+                </div>
+            </div>
+
+            <div class="form__controls form__controls-primero">
+                <button class="btn btn-primary" type="button" onclick="mostrar(2,2)">Continuar</button>
+            </div>
         </section>
-        <section class="entradas" id="parteDos" oculto>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
-                <label for="floatingInput">Nombre</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Apellido">
-                <label for="floatingInput">Apellido</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Celular">
-                <label for="floatingInput">Celular</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Ciudad">
-                <label for="floatingInput">Ciudad</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="Email">
-                <label for="floatingInput">Email</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="Email">
-                <label for="floatingInput">Email confirmar</label>
+
+        <section class="entradas" id="parte-2" oculto>
+            <h3 class="form__title">Datos del adulto responsable</h3>
+
+            <div class="form__flex-dos">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                    <label for="nombre">Nombre*</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="apellido" placeholder="Apellido">
+                    <label for="apellido">Apellido*</label>
+                </div>
             </div>
 
-            <button class="btn btn-outline-primary" type="button" onclick="mostrar(1)">Volver</button>
-            <button class="btn btn-primary" type="button" onclick="mostrar(3)">Continuar</button>
+            <div class="form__flex-dos">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="celular" placeholder="Celular">
+                    <label for="celular">Celular*</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="ciudad" placeholder="Ciudad">
+                    <label for="ciudad">Ciudad</label>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="mail" placeholder="Email">
+                <label for="mail">Email*</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="remail" placeholder="Email">
+                <label for="remail">Email confirmar*</label>
+            </div>
+
+            <div class="form__controls">
+                <button class="btn btn-outline-primary" type="button" onclick="mostrar(1,1)">Volver</button>
+                <button class="btn btn-primary" type="button" onclick="mostrar(3,2)">Continuar</button>
+            </div>
         </section>
-        <section class="entradas" id="parteTres" oculto>
+
+        <section class="entradas" id="parte-3" oculto>
+
             <p>* Insertar API de Mercago Pago aquí :) *</p>
 
-            <button class="btn btn-outline-primary" type="button" onclick="mostrar(2)">Volver</button>
-            <button class="btn btn-primary" type="button" onclick="mostrar(4)">Continuar</button>
-        </section>        
-        <section class="entradas" id="parteCuatro" oculto>
+            <div class="form__controls">
+                <button class="btn btn-outline-primary" type="button" onclick="mostrar(2,1)">Volver</button>
+                <button class="btn btn-primary" type="button" onclick="mostrar(4,2)">Continuar</button>
+            </div>
+        </section>
+
+        <section class="entradas" id="parte-4" oculto>
+
             <p>¡Gracias por su Compra y su Visita!</p>
             <p>Disfrute su excursión :)</p>
-            <button class="btn btn-outline-primary" type="button" onclick="mostrar(3)">Volver</button>
-            <button class="btn btn-primary" type="button" onclick="mostrar(5)">Finalizar</button>
+
+            <div class="form__controls">
+                <button class="btn btn-outline-primary" type="button" onclick="mostrar(3,1)">Volver</button>
+                <button class="btn btn-primary" type="submit">Finalizar</button>
+            </div>
         </section>
     </form>
 

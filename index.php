@@ -10,8 +10,9 @@
     <title>Museo</title>
 </head>
 <body>
-  <?php include('addons/background.php');
-        include('addons/configLanguage.php')
+  <?php
+    include('addons/background.php');
+    include('addons/configLanguage.php')
   ?>
 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -76,7 +77,7 @@
           <img class="nav__logo" src="img/logoarte.png" alt="Museo de Arte">
           <ul class="nav__list">
             <li> 
-              <svg class=" nav__item nav__acces" id="open__menu" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">.st0{fill:#f5f5f5;}</style><g><g><path class="st0" d="M381,190.9H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,190.9,381,190.9z"/></g><g><path class="st0" d="M381,361.1H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,361.1,381,361.1z"/></g><g><path class="st0" d="M381,276H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,276,381,276z"/></g></g></svg>
+                <svg class="nav__item nav__acces" id="open__menu" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">.st0{fill:#f5f5f5;}</style><g><g><path class="st0" d="M381,190.9H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,190.9,381,190.9z"/></g><g><path class="st0" d="M381,361.1H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,361.1,381,361.1z"/></g><g><path class="st0" d="M381,276H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,276,381,276z"/></g></g></svg>
                 <ul class="submenu">
                   <a class="nav__link" href="#"><li class="nav__item"><?php echo $lang['visit'] ?></li></a>
                   <a class="nav__link" href="exhibicion.php"><li class="nav__item"><?php echo $lang['exhibition'] ?></li></a>

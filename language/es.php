@@ -6,8 +6,9 @@ $lang = array(
     "exhibition" => "EXHIBICIÓN",
     "museum" => "MUSEO",
     "collections" => "COLECCIONES",
+    
     //INDEX.PHP
-    "welcome" => "!BIENVENIDO AL <b>MUSEO DE LANÚS</B>¡",
+    "welcome" => "¡BIENVENIDO AL <b>MUSEO DE LANÚS</B>!",
     "welcomet" => "PLANEÁ TU VISITA",
     "card__tittle1" => "VALOR DEL TICKET",     
     "card__link" => "!COMPRA TU ENTRADA¡",
