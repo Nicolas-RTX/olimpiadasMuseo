@@ -2,6 +2,8 @@
     date_default_timezone_set("America/Argentina/Buenos_Aires");
     $hoy = date("Y-m-d", strtotime("now"));
     $fecha = date("Y-m-d", strtotime("last day of +2 month"));
+    session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +16,7 @@
     <link rel="stylesheet" href="css/templateStyles.css">
     <link rel="stylesheet" href="css/entradasStyles.css">
     <title>Museo Argentino - Entradas</title>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
     <?php include('addons/background.php') ?>
@@ -31,7 +34,7 @@
         </section>
     </header>
 
-    <form class="entradasForm" action="entradasPosnet">
+    <form class="entradasForm" action="comprar.php" method="POST">
         <section class="entradas" id="parteUno">
             <h3>Día de la visita</h3>
             <label for="fecha">Seleccione una fecha</label>
@@ -56,12 +59,20 @@
 
             <h3>Horarios Disponibles</h3>
 
-            <input type="radio" name="horario">
-            <label for="horario">10:00 - 14:00 hs</label>
+            <input type="radio" name="horario" id="horario1" value="10:00 - 14:00 hs">
+            <label for="horario1">10:00 - 14:00 hs</label>
 
-            <input type="radio" name="horario">
-            <label for="horario">14:00 - 18:00 hs</label>
+            <input type="radio" name="horario" id="horario2" value="14:00 - 18:00 hs">
+            <label for="horario2">14:00 - 18:00 hs</label>
 
+            <?php 
+                if(isset($_SESSION['FLASH'])){
+                    ?>
+                    <h5 class="error"><?= $_SESSION['FLASH']["message"] ?></h5>
+                    <?php
+                    unset($_SESSION['FLASH']);
+                }
+            ?>
             <button class="btn btn-primary" type="button" onclick="mostrar(2)">Continuar</button>
         </section>
         <section class="entradas" id="parteDos" oculto>
@@ -91,11 +102,12 @@
             </div>
 
             <button class="btn btn-outline-primary" type="button" onclick="mostrar(1)">Volver</button>
-            <button class="btn btn-primary" type="button" onclick="mostrar(3)">Continuar</button>
+            <button type="submit" class="mercadoPagoButton">Checkout</button>
         </section>
         <section class="entradas" id="parteTres" oculto>
+            <!-- //! Aca nunca llega porque se redirige en el anterior -->
             <p>* Insertar API de Mercago Pago aquí :) *</p>
-
+            
             <button class="btn btn-outline-primary" type="button" onclick="mostrar(2)">Volver</button>
             <button class="btn btn-primary" type="button" onclick="mostrar(4)">Continuar</button>
         </section>        
