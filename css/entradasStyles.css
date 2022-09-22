@@ -62,3 +62,26 @@
 [bar-full] {
     width: 100%;
 }
+
+.mercadoPagoButton{
+    color:#fff;
+    background: #009EE3;
+    outline:none;
+    border:none;
+    padding:0.5em;
+    border-radius:0.2em;
+}
+
+.error{
+    color:red;
+}
+.checkout-container{
+    background: var(--blanco);
+    width:90%;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding-bottom:1em;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
