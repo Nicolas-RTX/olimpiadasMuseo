@@ -3,7 +3,6 @@
     $hoy = date("Y-m-d", strtotime("now"));
     $fecha = date("Y-m-d", strtotime("last day of +2 month"));
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,6 +13,7 @@
     <link rel="stylesheet" href="css/templateStyles.css">
     <link rel="stylesheet" href="css/entradasStyles.css">
     <title>Museo Argentino - Entradas</title>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
     <?php include('addons/background.php') ?>
@@ -87,6 +87,15 @@
                 </div>
             </div>
 
+            <?php 
+                if(isset($_SESSION['FLASH'])){
+                    ?>
+                    <h5 class="error"><?= $_SESSION['FLASH']["message"] ?></h5>
+                    <?php
+                    unset($_SESSION['FLASH']);
+                }
+            ?>
+
             <div class="form__controls form__controls-primero">
                 <button class="btn btn-primary" type="button" onclick="mostrar(2,2)">Continuar</button>
             </div>
@@ -131,6 +140,7 @@
 
             <div class="form__controls">
                 <button class="btn btn-outline-primary" type="button" onclick="mostrar(1,1)">Volver</button>
+                <button type="submit" class="mercadoPagoButton">Checkout</button>
                 <button class="btn btn-primary" type="button" onclick="mostrar(3,2)">Continuar</button>
             </div>
         </section>

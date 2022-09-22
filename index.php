@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/indexStyles.css">
     <link rel="stylesheet" href="css/templateStyles.css">
+    <!--
+    <script src="js/speech.js" defer></script>
+    <script src="js/voicerss-tts.min.js"></script> 
+  -->
     <title>Museo</title>
 </head>
 <body>
